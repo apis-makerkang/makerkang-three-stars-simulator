@@ -5,6 +5,14 @@
  
   <script>
     var useLocalAPIs = false;
+    
+    // three places for customization
+    // Customization1: API URL
+    if (useLocalAPIs) {
+      var apiSite="http://localhost:5000/";
+    } else {
+      var apiSite="https://three-stars-body-composition.herokuapp.com/";  
+    }    
   </script>
    
   <title>模擬器 V0.51</title>
@@ -47,6 +55,7 @@
     <option value="T99999999">啟德 開發機台 T99999999</option>      
     <option value="T21003317">即刻體能     T21003317</option>      
 -->
+    <!-- Customization2&3: Machine S/N and belonged place -->
     <option value="T22000599">潮州三星社區發展協會     T22000599</option>      
 
   </select>
@@ -126,11 +135,7 @@
     var inputError = false;    
     var powerIsOn =false;
     var res;
-    if (useLocalAPIs) {
-      var apiSite="http://localhost:5000/";
-    } else {
-      var apiSite="https://three-stars-body-composition.herokuapp.com/";  
-    }
+
     
     var paramToSend;   
     
